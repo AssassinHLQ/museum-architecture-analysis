@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "如需引用本项目，请使用以下信息。"
+title: "博物馆建筑分析 · 五例"
+abstract: >-
+  五座博物馆的建筑案例分析，每份为自包含的单文件网页。分析重点为形式生成逻辑、
+  技术代价与资料来源核查。统一标注约定：已核实 / 分析重建 / 分析推断 / 无公开依据。
+type: software
+authors:
+  - family-names: "AssassinHLQ"
+    name: "AssassinHLQ"
+    website: "https://github.com/AssassinHLQ"
+    role: "Project owner, research direction, review and fact-checking"
+  - name: "DeepSeek"
+    website: "https://www.deepseek.com"
+    role: "AI assistant: source research, page implementation, debugging"
+version: "1.0.0"
+date-released: "2026-09-11"
+license: MIT
+repository-code: "https://github.com/AssassinHLQ/museum-architecture-analysis"
+url: "https://assassinhlq.github.io/museum-architecture-analysis/"
+keywords:
+  - architecture
+  - museum
+  - case study
+  - data visualization
+  - single-file html
