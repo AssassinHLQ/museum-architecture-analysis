@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>博物馆建筑分析 · 五例 | Museum Architecture Analysis</title>
+<meta name="description" content="五座博物馆的建筑案例分析：长沙博物馆、谭国斌当代艺术馆、湖南航空馆、阿姆斯特丹阿纳姆博物馆、隆平水稻博物馆。逐案的形式生成、结构策略与资料来源核查。">
+<style>
+:root{
+  --bg:#0B0F0D; --bg2:#121A16; --rice:#F2EFE2; --mist:#9BB0A2;
+  --sprout:#7FC24A; --grain:#E8C368; --water:#4A8FA8; --line:rgba(242,239,226,.12);
+  --ease:cubic-bezier(.19,1,.22,1);
+  --pad:clamp(20px,5vw,90px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:var(--bg);color:var(--rice);
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+  line-height:1.7;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(circle at 20% 0%,rgba(127,194,74,.07),transparent 55%),
+                   radial-gradient(circle at 85% 15%,rgba(232,195,104,.06),transparent 50%);
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+
+/* 顶栏 */
+header{padding:clamp(48px,9vw,120px) 0 clamp(30px,5vw,60px)}
+.eyebrow{
+  font-family:ui-monospace,Consolas,monospace;font-size:10px;letter-spacing:.28em;
+  color:var(--sprout);text-transform:uppercase;margin-bottom:16px;
+  display:flex;align-items:center;gap:12px;
+}
+.eyebrow::before{content:'';width:26px;height:1px;background:var(--sprout)}
+h1{
+  font-family:"Songti SC","Source Han Serif SC",Georgia,serif;
+  font-weight:700;font-size:clamp(32px,6.4vw,78px);line-height:1.04;letter-spacing:-.012em;
+}
+h1 .acc{color:var(--grain)}
+.lead{
+  margin-top:clamp(16px,2.4vw,28px);max-width:62ch;
+  font-size:clamp(14px,1.4vw,18px);color:rgba(242,239,226,.86);
+}
+.note{
+  margin-top:14px;max-width:70ch;font-size:clamp(12px,.98vw,13.5px);color:var(--mist);
+}
+
+/* 卡片列表 */
+main{padding-bottom:clamp(60px,9vw,120px)}
+.grid{display:grid;grid-template-columns:1fr;gap:clamp(12px,1.6vw,18px)}
+.item{
+  position:relative;display:grid;grid-template-columns:auto 1fr auto;
+  gap:clamp(14px,2.4vw,34px);align-items:center;
+  padding:clamp(18px,2.6vw,32px);
+  border:1px solid var(--line);background:rgba(18,26,22,.62);
+  transition:transform .5s var(--ease),border-color .4s,background .4s,box-shadow .5s;
+  overflow:hidden;
+}
+.item::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--c,var(--sprout));transform:scaleY(0);transform-origin:top;
+  transition:transform .55s var(--ease);
+}
+.item:hover{
+  transform:translateY(-4px);border-color:color-mix(in srgb,var(--c) 55%,transparent);
+  background:rgba(24,36,30,.82);
+  box-shadow:0 18px 50px -24px color-mix(in srgb,var(--c) 60%,transparent);
+}
+.item:hover::before{transform:scaleY(1)}
+.idx{
+  font-family:ui-monospace,Consolas,monospace;font-size:clamp(20px,2.6vw,34px);
+  color:var(--c,var(--sprout));opacity:.75;font-weight:300;min-width:2.2em;
+}
+.t{font-family:"Songti SC","Source Han Serif SC",Georgia,serif;
+   font-weight:600;font-size:clamp(17px,2.1vw,27px);line-height:1.2}
+.t .en{display:block;font-family:ui-monospace,Consolas,monospace;font-weight:400;
+  font-size:clamp(9.5px,.86vw,11px);letter-spacing:.18em;color:var(--mist);
+  margin-top:7px;text-transform:uppercase}
+.d{margin-top:10px;font-size:clamp(12px,.98vw,13.5px);color:var(--mist);max-width:68ch}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tag{
+  font-family:ui-monospace,Consolas,monospace;font-size:9px;letter-spacing:.1em;
+  padding:3px 8px;border:1px solid color-mix(in srgb,var(--c) 42%,transparent);
+  color:var(--c);white-space:nowrap;
+}
+.size{
+  font-family:ui-monospace,Consolas,monospace;font-size:10.5px;color:var(--mist);
+  letter-spacing:.08em;text-align:right;white-space:nowrap;
+}
+.arrow{
+  display:block;margin-top:8px;color:var(--c);font-size:16px;
+  transition:transform .45s var(--ease);
+}
+.item:hover .arrow{transform:translateX(5px)}
+.warn{
+  grid-column:1/-1;margin-top:10px;font-family:ui-monospace,Consolas,monospace;
+  font-size:10px;color:var(--grain);letter-spacing:.06em;opacity:.85;
+}
+
+/* 说明区 */
+.info{
+  margin-top:clamp(40px,6vw,80px);padding-top:clamp(26px,4vw,48px);
+  border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:clamp(20px,3vw,44px);
+}
+.info h2{
+  font-family:ui-monospace,Consolas,monospace;font-size:10px;letter-spacing:.22em;
+  color:var(--sprout);text-transform:uppercase;margin-bottom:12px;font-weight:500;
+}
+.info p{font-size:clamp(12px,.98vw,13.5px);color:var(--mist)}
+.info p + p{margin-top:9px}
+.info b{color:var(--rice);font-weight:600}
+ul.src{list-style:none;display:grid;gap:8px}
+ul.src li{
+  font-size:clamp(11.5px,.94vw,13px);color:var(--mist);
+  padding-left:14px;position:relative;line-height:1.6;
+}
+ul.src li::before{
+  content:'';position:absolute;left:0;top:.62em;width:4px;height:4px;
+  background:var(--sprout);border-radius:50%;
+}
+footer{
+  border-top:1px solid var(--line);padding:clamp(22px,3.4vw,40px) 0;
+  font-family:ui-monospace,Consolas,monospace;font-size:10.5px;letter-spacing:.1em;
+  color:var(--mist);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+}
+footer a{color:var(--sprout);border-bottom:1px solid rgba(127,194,74,.3)}
+@media (max-width:760px){
+  .item{grid-template-columns:1fr;gap:12px}
+  .idx{font-size:16px;min-width:0}
+  .size{text-align:left}
+  .item::before{width:100%;height:3px;bottom:auto;transform:scaleX(0);transform-origin:left}
+  .item:hover::before{transform:scaleX(1)}
+}
+@media (prefers-reduced-motion:reduce){
+  .item,.item::before,.arrow{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Architecture Analysis / 建筑案例分析</div>
+  <h1>五座博物馆的<span class="acc">建筑分析</span></h1>
+  <p class="lead">
+    五个单文件网页，各分析一座博物馆。重点不在介绍，而在<b>拆解形式是怎么生成的、
+    技术代价在哪里、哪些说法有出处、哪些没有</b>。
+  </p>
+  <p class="note">
+    每一份都标注了核实状态：<b>已核实</b>（附来源）／<b>分析重建</b>／<b>分析推断</b>／<b>无公开依据</b>。
+    凡官方资料未公开的参数（如结构构件规格），一律留白，不以推测填充。
+  </p>
+</header>
+
+<main>
+  <div class="grid">
+
+    <a class="item" href="changsha_museum_analysis.html" style="--c:#C24B3A">
+      <div class="idx">01</div>
+      <div>
+        <div class="t">长沙博物馆<span class="en">Changsha Museum · 2015</span></div>
+        <div class="d">「顽石」与「沙洲」两个概念的落地过程。从体量生成到幕墙分格，
+          含 11 张手绘分析图版。数据与原稿逐条核对，修正了建成时间与建筑面积。</div>
+        <div class="meta">
+          <span class="tag">垂直滚动</span>
+          <span class="tag">11 张 SVG 图版</span>
+          <span class="tag">华南理工 · 陶郅工作室</span>
+        </div>
+      </div>
+      <div class="size">1.7 MB<span class="arrow">→</span></div>
+    </a>
+
+    <a class="item" href="tanguobin_museum_analysis.html" style="--c:#E8C368">
+      <div class="idx">02</div>
+      <div>
+        <div class="t">谭国斌当代艺术馆<span class="en">Tan Guobin Contemporary Art Museum</span></div>
+        <div class="d">构成主义语汇：红、黑、米白三色与斜切块面。横向面板叙事，
+          以拖拽、滚轮与键盘推进。体积最轻的一份。</div>
+        <div class="meta">
+          <span class="tag">横向面板</span>
+          <span class="tag">构成主义</span>
+          <span class="tag">轻量 · 56 KB</span>
+        </div>
+      </div>
+      <div class="size">56 KB<span class="arrow">→</span></div>
+    </a>
+
+    <a class="item" href="hunan_aviation_museum_analysis.html" style="--c:#5B8FB9">
+      <div class="idx">03</div>
+      <div>
+        <div class="t">湖南航空馆<span class="en">Hunan Aviation Museum</span></div>
+        <div class="d">工业风。动线由垂直转横向、再转斜向，CardSwap 卡片堆叠与
+          十字准星光标。10 张实景图内嵌。</div>
+        <div class="meta">
+          <span class="tag">斜向转场</span>
+          <span class="tag">CardSwap</span>
+          <span class="tag">十字准星</span>
+        </div>
+      </div>
+      <div class="size">1.8 MB<span class="arrow">→</span></div>
+    </a>
+
+    <a class="item" href="museum_arnhem_analysis.html" style="--c:#C9963F">
+      <div class="idx">04</div>
+      <div>
+        <div class="t">阿纳姆博物馆<span class="en">Museum Arnhem · 2017–2022 改建</span></div>
+        <div class="d">哥特式语汇：尖拱、玫瑰窗、铅条。15 米悬挑的桁架与滑动施工，
+          82,000 块手工瓷砖的地质渐变。含 WebGL 彩窗、暗夜深渊字体与 GIF 动效。</div>
+        <div class="meta">
+          <span class="tag">WebGL 彩窗</span>
+          <span class="tag">尖拱 / 玫瑰窗</span>
+          <span class="tag">图集 16 帧</span>
+        </div>
+        <div class="warn">⚠ 图片未压缩内嵌（含 4600px 原图与 GIF），文件 20 MB，首次打开需等待数秒</div>
+      </div>
+      <div class="size">20.2 MB<span class="arrow">→</span></div>
+    </a>
+
+    <a class="item" href="longping_rice_museum_analysis.html" style="--c:#7FC24A">
+      <div class="idx">05</div>
+      <div>
+        <div class="t">隆平水稻博物馆<span class="en">Longping Rice Museum · 2016 / 2019</span></div>
+        <div class="d">循维特鲁威三原则——坚固、实用、美观——检视「一粒稻谷」如何转译成建筑。
+          五栋主体绕心 72° 放射：俯瞰作五粒稻谷，平视作五瓣芙蓉。</div>
+        <div class="meta">
+          <span class="tag">坚固 · 实用 · 美观</span>
+          <span class="tag">可旋转图版</span>
+          <span class="tag">图片灯箱</span>
+          <span class="tag">金色粒子</span>
+        </div>
+      </div>
+      <div class="size">2.3 MB<span class="arrow">→</span></div>
+    </a>
+
+  </div>
+
+  <div class="info">
+    <div>
+      <h2>怎么读</h2>
+      <p>每份分析都遵循同一套标注约定：</p>
+      <p><b>已核实</b>——有公开来源，附链接。<br>
+         <b>分析重建</b>——依照片或公开图像反推的图版。<br>
+         <b>分析推断</b>——基于建筑常识的推理，非官方表述。<br>
+         <b>无公开依据</b>——该项留白，不填数字。</p>
+      <p>所有 SVG 图版均为分析绘制的图解，<b>不是设计方原始图纸</b>。</p>
+    </div>
+    <div>
+      <h2>技术</h2>
+      <p>五份均为<b>单文件</b>：CSS、JavaScript、字体、图片全部内嵌，
+         无外部依赖、无构建步骤。双击即可在浏览器打开。</p>
+      <p>响应式布局，支持 <b>prefers-reduced-motion</b>（开启后会关闭粒子、
+         视差与自动播放动效），并提供打印样式。</p>
+      <p>本索引页的五个条目即为入口，无需本地服务器。</p>
+    </div>
+    <div>
+      <h2>图片来源与版权</h2>
+      <ul class="src">
+        <li>实景照片来自各项目的公开报道、设计单位公开资料与开放图库，版权归原作者所有。</li>
+        <li>阿纳姆博物馆图集来自谷德设计网（gooood）刊载的项目文章，摄影与图纸版权归原作者及设计方。</li>
+        <li>隆平水稻博物馆图片来自长沙市政府门户网站、星辰在线等公开报道。</li>
+        <li>以上图片仅用于课程分析与研究，不作商业用途。如有侵权请联系删除。</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span>MUSEUM ARCHITECTURE ANALYSIS · 5 CASES</span>
+  <span>Built as single-file HTML · No external dependencies</span>
+</footer>
+
+</div>
+</body>
+</html>
