@@ -65,6 +65,7 @@
 ├── museum_arnhem_analysis.html             # 04 阿纳姆博物馆
 ├── longping_rice_museum_analysis.html      # 05 隆平水稻博物馆
 ├── CONTRIBUTORS.md                         # 协作分工
+├── NOTICE.md                               # AI 协作声明
 ├── CITATION.cff                            # 引用信息
 └── images_source/                          # 部分原始素材（供核对）
 ```
@@ -100,7 +101,7 @@ git clone https://github.com/AssassinHLQ/museum-architecture-analysis.git
 | **AssassinHLQ** | 立项与选题、风格与分析主线的方向决策、事实审阅、质量把关、对外发布 |
 | **DeepSeek** | 公开资料检索与核查、事实冲突处理、页面实现（HTML/CSS/JS + 40 余张 SVG 图版）、动效与适配、字体修复、自动化渲染验证、文档撰写 |
 
-详细分工见 [CONTRIBUTORS.md](CONTRIBUTORS.md)。页面内的判断与图解均经项目方审阅后采用，**若仍有疏漏，责任在项目方**。
+详细分工见 [CONTRIBUTORS.md](CONTRIBUTORS.md)，AI 参与范围与技术信息见 [NOTICE.md](NOTICE.md)。页面内的判断与图解均经项目方审阅后采用，**若仍有疏漏，责任在项目方**。
 
 ---
 
