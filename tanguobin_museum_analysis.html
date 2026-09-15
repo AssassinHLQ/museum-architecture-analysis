@@ -297,6 +297,27 @@ td b{font-weight:800}
   .panel{width:100%;height:auto;page-break-after:always;background:#fff !important;color:#000 !important}
   #top,#bottom,#cur,#hint{display:none}
 }
+
+/* ---------- 来源标签：每处引用可就地点击核验原文 ---------- */
+.src-chip{
+  display:inline-flex;align-items:baseline;gap:.3em;
+  font-family:var(--mono);font-size:.68rem;line-height:1.5;
+  letter-spacing:.02em;color:inherit;opacity:.75;
+  border:1px solid currentColor;border-radius:3px;
+  padding:.05em .42em;margin-left:.32em;
+  white-space:nowrap;text-decoration:none;
+  transition:opacity .25s,border-color .25s,background .25s;
+}
+.src-chip:hover{opacity:1;text-decoration:underline;background:rgba(230,43,30,.08)}
+.on-red .src-chip,.on-ink .src-chip{color:var(--paper);opacity:.85}
+.src-block{display:block;margin-top:6px;line-height:2.1}
+@media (max-width:560px){
+  .src-chip{font-size:.62rem;padding:.04em .3em}
+  .src-block{line-height:2.4}
+}
+@media print{
+  .src-chip{border-color:#000;color:#000;opacity:1}
+}
 </style>
 </head>
 <body>
@@ -346,6 +367,7 @@ td b{font-weight:800}
           <div class="stat" style="color:var(--ink);margin-top:clamp(14px,2vh,28px)">
             <div class="v">6000+<small>㎡ 陈列</small></div>
             <div class="k">Exhibition Area<br>展厅净高约 4.5 m</div>
+            <a class="src-chip" href="http://tcam.artron.net/index.php/articles_models/index/661" target="_blank" rel="noopener">馆方官网 ↗</a>
           </div>
         </div>
       </div>
@@ -372,10 +394,12 @@ td b{font-weight:800}
           <div class="stat">
             <div class="v">6000<small class="red">+㎡</small></div>
             <div class="k">新馆陈列面积<span class="tag">已核实</span></div>
+            <a class="src-chip" href="http://tcam.artron.net/index.php/articles_models/index/661" target="_blank" rel="noopener">馆方官网 ↗</a>
           </div>
           <div class="stat">
             <div class="v">4.5<small class="red">m</small></div>
             <div class="k">展厅净高<span class="tag">已核实</span></div>
+            <a class="src-chip" href="http://tcam.artron.net/index.php/articles_models/index/661" target="_blank" rel="noopener">馆方官网 ↗</a>
           </div>
         </div>
         <div class="cols c2 anim" style="margin-top:clamp(12px,1.8vh,26px)">
@@ -394,16 +418,32 @@ td b{font-weight:800}
         <table>
           <thead><tr><th>项目</th><th>内容</th></tr></thead>
           <tbody>
-            <tr><td>机构名称</td><td><b>湖南省谭国斌当代艺术博物馆</b><span class="tag">已核实</span></td></tr>
-            <tr><td>创办人</td><td>谭国斌，私人筹资创办</td></tr>
-            <tr><td>创办时间</td><td><b>2005 年</b>，经湖南省文物局批准设立</td></tr>
-            <tr><td>机构性质</td><td>民营（非国有）博物馆 / 美术馆</td></tr>
-            <tr><td>馆址</td><td>长沙市开福区湘江北路<br>（近创远路，<b>湘江壹号</b>）</td></tr>
-            <tr><td>陈列面积</td><td>新馆 <b>逾 6000 ㎡</b></td></tr>
-            <tr><td>展厅净高</td><td>约 <b>4.5 m</b></td></tr>
-            <tr><td>收藏门类</td><td>古代与现代书画、瓷器、古典家具、<br>当代油画与雕塑</td></tr>
-            <tr><td>开放时间</td><td>9:30–16:30（周一闭馆）</td></tr>
-            <tr><td>品牌展览</td><td>「艺术长沙」双年展、「艺术节点」等</td></tr>
+            <tr><td>机构名称</td><td><b>湖南省谭国斌当代艺术博物馆</b><span class="tag">已核实</span>
+              <a class="src-chip" href="http://wlgd.changsha.gov.cn/fwms/bwgcx/202503/t20250325_11790488.html" target="_blank" rel="noopener">文旅局名录 ↗</a></td></tr>
+            <tr><td>创办人</td><td>谭国斌，私人筹资创办
+              <a class="src-chip" href="http://tcam.artron.net/index.php/articles_models/index/661" target="_blank" rel="noopener">馆方官网 ↗</a></td></tr>
+            <tr><td>创办时间</td><td><b>2005 年</b>，经湖南省文物局批准设立
+              <a class="src-chip" href="http://tcam.artron.net/index.php/articles_models/index/661" target="_blank" rel="noopener">馆方官网 ↗</a><br>
+              <span style="color:var(--grey);font-size:12px">另口径：长沙市文化旅游广电局名录记成立时间为 <b>2012 年</b>。
+              两者相差 7 年，本页不擅自裁定，并列呈现。</span>
+              <a class="src-chip" href="http://wlgd.changsha.gov.cn/fwms/bwgcx/202503/t20250325_11790488.html" target="_blank" rel="noopener">文旅局名录 ↗</a></td></tr>
+            <tr><td>机构性质</td><td>民营（非国有）博物馆 / 美术馆
+              <a class="src-chip" href="http://wlgd.changsha.gov.cn/fwms/bwgcx/202503/t20250325_11790488.html" target="_blank" rel="noopener">文旅局名录 ↗</a></td></tr>
+            <tr><td>馆址</td><td>长沙市开福区湘江北路<br>（近创远路，<b>湘江壹号</b>）
+              <a class="src-chip" href="http://tcam.artron.net/index.php/articles_models/index/661" target="_blank" rel="noopener">馆方官网 ↗</a><br>
+              <span style="color:var(--grey);font-size:12px">另口径：文旅局名录记地址为「开福区新河三角洲滨江文化园内」。</span>
+              <a class="src-chip" href="http://wlgd.changsha.gov.cn/fwms/bwgcx/202503/t20250325_11790488.html" target="_blank" rel="noopener">文旅局名录 ↗</a></td></tr>
+            <tr><td>陈列面积</td><td>新馆 <b>逾 6000 ㎡</b>
+              <a class="src-chip" href="http://tcam.artron.net/index.php/articles_models/index/661" target="_blank" rel="noopener">馆方官网 ↗</a></td></tr>
+            <tr><td>展厅净高</td><td>约 <b>4.5 m</b>
+              <a class="src-chip" href="http://tcam.artron.net/index.php/articles_models/index/661" target="_blank" rel="noopener">馆方官网 ↗</a></td></tr>
+            <tr><td>收藏门类</td><td>古代与现代书画、瓷器、古典家具、<br>当代油画与雕塑
+              <a class="src-chip" href="http://tcam.artron.net/index.php/articles_models/index/661" target="_blank" rel="noopener">馆方官网 ↗</a></td></tr>
+            <tr><td>开放时间</td><td>9:30–16:30（周一闭馆）
+              <a class="src-chip" href="http://wlgd.changsha.gov.cn/fwms/bwgcx/202503/t20250325_11790488.html" target="_blank" rel="noopener">文旅局名录 ↗</a><br>
+              <span style="color:var(--grey);font-size:12px">文旅局名录记 9:30–17:30（17:00 停止入馆），与馆方旧公告略有出入。</span></td></tr>
+            <tr><td>品牌展览</td><td>「艺术长沙」双年展、「艺术节点」等
+              <a class="src-chip" href="http://wlgd.changsha.gov.cn/fwms/bwgcx/202503/t20250325_11790488.html" target="_blank" rel="noopener">文旅局名录 ↗</a></td></tr>
             <tr><td>结构形式</td><td>—<span class="tag est">无公开依据</span></td></tr>
             <tr><td>设计单位</td><td>—<span class="tag est">无公开依据</span></td></tr>
           </tbody>
@@ -957,23 +997,29 @@ td b{font-weight:800}
           <thead><tr><th>来源</th><th>取用内容</th></tr></thead>
           <tbody>
             <tr>
-              <td>长沙市政府官网<br>（英文版景点页）</td>
-              <td>2005 年创办、湖南省文物局批准、陈列面积 6000+ ㎡、
-                  展厅高约 4.5 m、开放时间、收藏门类、湘江北路与创远路位置</td>
+              <td>馆方官方页<br>（雅昌艺术网 · tcam）</td>
+              <td>2005 年创办、谭国斌私人筹资、湖南省文物局批准授牌、
+                  新馆位于湘江北路与创远路交汇处湘江壹号、陈列面积逾 6000 ㎡、
+                  展厅高约 4.5 m、收藏门类
+                  <a class="src-chip" href="http://tcam.artron.net/index.php/articles_models/index/661" target="_blank" rel="noopener">tcam.artron.net ↗</a></td>
             </tr>
             <tr>
-              <td>照明日报<br>（博物馆照明报道）</td>
-              <td>新馆陈列面积逾 6000 ㎡、展厅高约 4.5 m、
-                  2019 第七届艺术长沙三展区、三层空间分配三个个展、
-                  11 盏美术灯照明 30.86 m 长卷、李津《丛生·从生》尺寸</td>
-            </tr>
-            <tr>
-              <td>湖南省文旅厅<br>博物馆名录</td>
-              <td>机构全称「湖南省谭国斌当代艺术博物馆」及馆址</td>
+              <td>长沙市文化旅游广电局<br>博物馆名录（2025-03-25）</td>
+              <td>机构全称、性质（非国有博物馆）、开放时间、艺术长沙届数沿革；
+                  记成立时间 <b>2012 年</b>、地址「滨江文化园内」——与馆方口径并列
+                  <a class="src-chip" href="http://wlgd.changsha.gov.cn/fwms/bwgcx/202503/t20250325_11790488.html" target="_blank" rel="noopener">wlgd.changsha.gov.cn ↗</a></td>
             </tr>
             <tr>
               <td>雅昌艺术网 / hiart<br>展览与评论</td>
-              <td>开馆展「湘江北上」、艺术长沙系列展览沿革</td>
+              <td>开馆展「湘江北上」、艺术长沙系列展览沿革
+                  <a class="src-chip" href="http://hiart.cn/exhibition/detail/037gwzn.html" target="_blank" rel="noopener">hiart.cn ↗</a></td>
+            </tr>
+            <tr>
+              <td>照明日报<br>（待补链接）</td>
+              <td>新馆陈列面积逾 6000 ㎡、展厅高约 4.5 m、
+                  2019 第七届艺术长沙三展区、三层空间分配三个个展、
+                  11 盏美术灯照明 30.86 m 长卷、李津《丛生·从生》尺寸
+                  <span class="src-chip" style="opacity:.45;cursor:default">未找到公开链接</span></td>
             </tr>
           </tbody>
         </table>

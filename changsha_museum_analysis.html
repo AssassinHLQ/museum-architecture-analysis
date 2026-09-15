@@ -436,6 +436,24 @@ footer{
   body{background:#fff;color:#111}
   .topbar,.rail,#progress,#toTop,#cursor,#cursor-dot,.scroll-hint{display:none}
 }
+
+/* ---------- 来源标签：每处引用可就地点击核验原文 ---------- */
+.src-chip{
+  display:inline-flex;align-items:baseline;gap:.3em;
+  font-family:var(--mono);font-size:.68rem;line-height:1.5;
+  letter-spacing:.02em;color:var(--gold-l);opacity:.85;
+  border:1px solid currentColor;border-radius:3px;
+  padding:.05em .42em;margin-left:.32em;
+  white-space:nowrap;text-decoration:none;
+  transition:opacity .25s,background .25s;
+}
+.src-chip:hover{opacity:1;background:rgba(227,199,102,.14);text-decoration:underline}
+.src-block{display:block;margin-top:6px;line-height:2.1}
+@media (max-width:560px){
+  .src-chip{font-size:.62rem;padding:.04em .3em}
+  .src-block{line-height:2.4}
+}
+@media print{.src-chip{color:#8a6f13;border-color:#8a6f13;opacity:1}}
 </style>
 </head>
 <body>
@@ -587,22 +605,26 @@ footer{
     <div class="metrics reveal" id="metrics">
       <div class="metric">
         <div class="n"><span class="cnt" data-to="24000">24,000</span><span class="u">㎡</span></div>
-        <div class="l">博物馆建筑面积<br>长沙市政府公开口径</div>
+        <div class="l">博物馆建筑面积<br>长沙市政府公开口径
+          <a class="src-chip src-block" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/whcgcx/202507/t20250707_11908596.html" target="_blank" rel="noopener">changsha.gov.cn ↗</a></div>
         <div class="bar"><i data-w="72"></i></div>
       </div>
       <div class="metric">
         <div class="n"><span class="cnt" data-to="34173">34,173</span><span class="u">㎡</span></div>
-        <div class="l">博物馆 + 城市规划展览馆<br>合并计容 / 项目档案</div>
+        <div class="l">博物馆 + 城市规划展览馆<br>合并计容 / 项目档案
+          <a class="src-chip src-block" href="http://chinaasc.org.cn/news/127447.html" target="_blank" rel="noopener">中国建筑学会 ↗</a></div>
         <div class="bar"><i data-w="100"></i></div>
       </div>
       <div class="metric">
         <div class="n"><span class="cnt" data-to="149943">149,943</span><span class="u">㎡</span></div>
-        <div class="l">滨江文化园总建筑面积<br>地上 5 层 / 地下 1 层</div>
+        <div class="l">滨江文化园总建筑面积<br>地上 5 层 / 地下 1 层
+          <a class="src-chip src-block" href="http://chinaasc.org.cn/news/127447.html" target="_blank" rel="noopener">中国建筑学会 ↗</a></div>
         <div class="bar"><i data-w="88"></i></div>
       </div>
       <div class="metric">
         <div class="n"><span class="cnt" data-to="5">5</span><span class="u">万余件/套</span></div>
-        <div class="l">馆藏文物<br>旧石器时代至近现代</div>
+        <div class="l">馆藏文物<br>旧石器时代至近现代
+          <a class="src-chip src-block" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/whcgcx/202507/t20250707_11908596.html" target="_blank" rel="noopener">changsha.gov.cn ↗</a></div>
         <div class="bar"><i data-w="56"></i></div>
       </div>
     </div>
@@ -634,24 +656,31 @@ footer{
           <tbody>
             <tr>
               <td>文化园总建筑面积</td>
-              <td><strong>149,943 ㎡</strong><span class="src-mark">已核实</span></td>
+              <td><strong>149,943 ㎡</strong><span class="src-mark">已核实</span>
+                <a class="src-chip" href="http://chinaasc.org.cn/news/127447.html" target="_blank" rel="noopener">中国建筑学会 ↗</a></td>
             </tr>
             <tr>
               <td>博物馆建筑面积</td>
-              <td><strong>约 2.4 万 ㎡</strong><span class="src-mark">已核实</span><br>
-              <span style="color:var(--mute);font-size:12.5px">注：另有档案将博物馆与规划展览馆合并记为 34,173 ㎡，口径不同，本页两者并列呈现。</span></td>
+              <td><strong>约 2.4 万 ㎡</strong><span class="src-mark">已核实</span>
+                <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/whcgcx/202507/t20250707_11908596.html" target="_blank" rel="noopener">长沙市政府 ↗</a><br>
+              <span style="color:var(--mute);font-size:12.5px">注：另有档案将博物馆与规划展览馆合并记为 34,173 ㎡，口径不同，本页两者并列呈现。
+                同一份项目档案的「项目概况」段另记博物馆为 2.2 万 ㎡，与「建筑群」段数字不同源，亦不可混用。</span>
+                <a class="src-chip" href="http://chinaasc.org.cn/news/127447.html" target="_blank" rel="noopener">中国建筑学会 ↗</a></td>
             </tr>
             <tr>
               <td>音乐厅 / 图书馆</td>
-              <td>28,161 ㎡ / 31,322 ㎡<span class="src-mark">已核实</span></td>
+              <td>28,161 ㎡ / 31,322 ㎡<span class="src-mark">已核实</span>
+                <a class="src-chip" href="http://chinaasc.org.cn/news/127447.html" target="_blank" rel="noopener">中国建筑学会 ↗</a></td>
             </tr>
             <tr>
               <td>景观塔</td>
-              <td>650 ㎡ / 高 <strong>116 m</strong><span class="src-mark">已核实</span></td>
+              <td>650 ㎡ / 高 <strong>116 m</strong><span class="src-mark">已核实</span>
+                <a class="src-chip" href="http://chinaasc.org.cn/news/127447.html" target="_blank" rel="noopener">中国建筑学会 ↗</a></td>
             </tr>
             <tr>
               <td>用地面积</td>
-              <td>约 <strong>196 亩</strong>（≈13.07 ha）<span class="src-mark">已核实</span></td>
+              <td>约 <strong>196 亩</strong>（≈13.07 ha）<span class="src-mark">已核实</span>
+                <a class="src-chip" href="http://chinaasc.org.cn/news/127447.html" target="_blank" rel="noopener">中国建筑学会 ↗</a></td>
             </tr>
             <tr>
               <td>容积率</td>
@@ -663,7 +692,8 @@ footer{
             </tr>
             <tr>
               <td>外墙构造</td>
-              <td><strong>1 m × 3 m 混凝土挂板</strong>，表面铸刻纹样<span class="src-mark">已核实</span></td>
+              <td><strong>1 m × 3 m 混凝土挂板</strong>，表面铸刻纹样<span class="src-mark">已核实</span>
+                <span class="src-chip" style="opacity:.45;cursor:default">来源未找到链接</span></td>
             </tr>
           </tbody>
         </table>
@@ -1937,24 +1967,30 @@ footer{
           <thead><tr><th>来源</th><th>取用内容</th></tr></thead>
           <tbody>
             <tr>
-              <td>中国建筑学会<br>项目档案</td>
-              <td>构思原型、结构策略、给排水与消防系统、各单体面积、设计与建成时间</td>
+              <td>中国建筑学会<br>陶郅作品：长沙滨江文化园</td>
+              <td>构思原型、结构策略、给排水与消防系统、各单体面积、设计与建成时间、设计团队名单
+                <a class="src-chip" href="http://chinaasc.org.cn/news/127447.html" target="_blank" rel="noopener">chinaasc.org.cn ↗</a></td>
             </tr>
             <tr>
-              <td>建筑学院<br>项目发表</td>
-              <td>外墙 1m×3m 混凝土挂板与纹样主题、景观塔高度、获奖信息、设计团队</td>
+              <td>长沙市政府门户网站<br>长沙博物馆（2025-07-07）</td>
+              <td>成立时间 1986 年、新馆 2015.12.28 开放、建筑高 5 层、
+                  <b>建筑面积 2.4 万 ㎡</b>、国家一级博物馆、馆藏 50,182 件
+                  <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/whcgcx/202507/t20250707_11908596.html" target="_blank" rel="noopener">changsha.gov.cn ↗</a></td>
             </tr>
             <tr>
               <td>谷德设计网<br>gooood</td>
-              <td>项目基本定位、材料标签（金属 / 钢 / 混凝土 / 玻璃）</td>
+              <td>项目基本定位、材料标签（金属 / 钢 / 混凝土 / 玻璃）
+                  <span class="src-chip" style="opacity:.45;cursor:default">未找到公开链接</span></td>
             </tr>
             <tr>
-              <td>长沙市政府<br>公开材料</td>
-              <td>博物馆建筑面积 2.4 万 ㎡、馆藏约 5 万余件（套）</td>
+              <td>「建筑学院」项目发表</td>
+              <td>外墙 1m×3m 混凝土挂板与纹样主题、景观塔高度、获奖信息、设计团队
+                  <span class="src-chip" style="opacity:.45;cursor:default">未找到公开链接</span></td>
             </tr>
             <tr>
-              <td>地方政府文化<br>遗产公开报道</td>
-              <td>馆藏序列（旧石器时代至近现代）</td>
+              <td>地方政府文化遗产<br>公开报道</td>
+              <td>馆藏序列（旧石器时代至近现代）
+                  <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/whcgcx/202507/t20250707_11908596.html" target="_blank" rel="noopener">changsha.gov.cn ↗</a></td>
             </tr>
           </tbody>
         </table>

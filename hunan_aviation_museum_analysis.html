@@ -392,6 +392,28 @@ footer{position:relative;z-index:2;padding:clamp(40px,5vw,80px) clamp(24px,5vw,9
   #hud,#nav,#prog,#pct,#cur,#xh{display:none}
   .mark{opacity:.06 !important}
 }
+
+/* ---------- 来源标签：每处引用可就地点击核验原文 ---------- */
+.src-chip{
+  display:inline-flex;align-items:baseline;gap:.3em;
+  font-family:var(--mono);font-size:.68rem;line-height:1.5;
+  letter-spacing:.02em;color:var(--hi2);opacity:.82;
+  border:1px solid currentColor;border-radius:3px;
+  padding:.05em .42em;margin-left:.32em;
+  white-space:nowrap;text-decoration:none;
+  transition:opacity .25s,background .25s;
+}
+.src-chip:hover{opacity:1;color:var(--hi2);background:rgba(240,180,28,.12);text-decoration:underline}
+.band.paper .src-chip{color:#B02A0D}
+.band.paper .src-chip:hover{background:rgba(176,42,13,.09)}
+.src-block{display:block;margin-top:6px;line-height:2.1}
+@media (max-width:560px){
+  .src-chip{font-size:.62rem;padding:.04em .3em}
+  .src-block{line-height:2.4}
+}
+@media print{
+  .src-chip{color:#000 !important;border-color:#000}
+}
 </style>
 </head>
 <body>
@@ -448,7 +470,8 @@ footer{position:relative;z-index:2;padding:clamp(40px,5vw,80px) clamp(24px,5vw,9
           <div class="cn-h1">湖南航空馆</div>
           <p class="lead" style="margin-top:clamp(12px,1.6vw,20px)">
             本次分析的对象不是一栋建筑，而是<b>一片场地上的三种陈列气候</b>。
-            航空馆由主馆、文物飞机陈列馆与航空装备展示坪组成，占地 2 万余平方米——
+            航空馆由主馆、文物飞机陈列馆与航空装备展示坪组成，占地 26,600 余平方米
+            <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 ↗</a>——
             但真正值得分析的是：<b>它为什么要把展品分放在室内、棚架与露天三个地方</b>，
             以及这个决定如何反过来限定了它的展览能力。
           </p>
@@ -462,14 +485,17 @@ footer{position:relative;z-index:2;padding:clamp(40px,5vw,80px) clamp(24px,5vw,9
           <div class="stat">
             <div class="v">7526<small>㎡</small></div>
             <div class="k">主馆建筑面积 / 共三层</div>
+            <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 ↗</a>
           </div>
           <div class="stat" style="margin-top:clamp(14px,2vw,26px);border-left-color:var(--hi2)">
-            <div class="v">20000<small>㎡+</small></div>
+            <div class="v">26600<small>㎡+</small></div>
             <div class="k">航空馆总占地 / 含室外展示坪</div>
+            <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 ↗</a>
           </div>
           <div class="stat" style="margin-top:clamp(14px,2vw,26px)">
             <div class="v">2018<small>开馆</small></div>
             <div class="k">湖南首家航空馆 · 全面免费开放</div>
+            <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">12 月 26 日 ↗</a>
           </div>
         </div>
       </div>
@@ -495,22 +521,24 @@ footer{position:relative;z-index:2;padding:clamp(40px,5vw,80px) clamp(24px,5vw,9
         这意味着任何关于「建筑师如何思考」的论述都只能是推测。
         因此本页的分析刻意止步于<b>可被观察的空间结果</b>——
         场地排布、陈列方式、气候分区与运营结构，而不去编造设计意图。
-        馆方官网（hkg.cavtc.cn）在本次分析期间返回字符集错误、无法读取，
-        数据取自已公开的政府与媒体报道。
+        面积与开馆数据取自<b>馆方官网概览页</b>与政府、媒体报道，逐条给出链接可核验。
       </p>
 
       <div class="cols c4 anim" style="margin-top:clamp(20px,3vw,40px)">
         <div class="stat">
           <div class="v">7526<small>㎡</small></div>
-          <div class="k">主馆建筑面积<span class="tag">已核实</span></div>
+          <div class="k">主馆建筑面积<span class="tag">已核实</span>
+            <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 ↗</a></div>
         </div>
         <div class="stat" style="border-left-color:var(--hi2)">
           <div class="v">3<small>层</small></div>
-          <div class="k">主馆层数<span class="tag">已核实</span></div>
+          <div class="k">主馆层数<span class="tag">已核实</span>
+            <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 ↗</a></div>
         </div>
         <div class="stat">
           <div class="v">2<small>万㎡+</small></div>
-          <div class="k">航空馆总占地<span class="tag">已核实</span></div>
+          <div class="k">航空馆总占地<span class="tag">已核实</span>
+            <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 26,600 ㎡ ↗</a></div>
         </div>
         <div class="stat" style="border-left-color:var(--hi2)">
           <div class="v">2018<small>12月</small></div>
@@ -523,16 +551,33 @@ footer{position:relative;z-index:2;padding:clamp(40px,5vw,80px) clamp(24px,5vw,9
           <table>
             <thead><tr><th>项目</th><th>内容</th></tr></thead>
             <tbody>
-              <tr><td>机构名称</td><td><b>湖南航空馆</b><span class="tag">已核实</span></td></tr>
-              <tr><td>建设主体</td><td>长沙航空职业技术学院</td></tr>
-              <tr><td>开馆时间</td><td><b>2018 年 12 月</b>（12 月 26 日开馆仪式）</td></tr>
-              <tr><td>机构性质</td><td>高校校内专业性展馆 / 科普与国防教育基地</td></tr>
-              <tr><td>开放方式</td><td><b>全面对外免费开放</b></td></tr>
-              <tr><td>馆址</td><td>长沙市<b>雨花区</b> · 长沙航空职业技术学院</td></tr>
-              <tr><td>总占地</td><td><b>2 万余平方米</b></td></tr>
-              <tr><td>构成</td><td><b>主馆 + 文物飞机陈列馆 + 航空装备展示坪</b></td></tr>
-              <tr><td>主馆规模</td><td>建筑面积 <b>7526 ㎡</b>，共 <b>三层</b></td></tr>
-              <tr><td>定位</td><td>航空装备、航空科技与航空文化相融合的现代化专业性展馆</td></tr>
+              <tr><td>机构名称</td><td><b>湖南航空馆</b><span class="tag">已核实</span>
+                <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 ↗</a></td></tr>
+              <tr><td>建设主体</td><td>长沙航空职业技术学院
+                <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 ↗</a></td></tr>
+              <tr><td>开馆时间</td><td><b>2018 年 12 月 26 日</b>面向社会开放
+                <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 ↗</a>
+                <a class="src-chip" href="https://edu.rednet.cn/content/2018/12/27/4480115.html" target="_blank" rel="noopener">红网 ↗</a></td></tr>
+              <tr><td>机构性质</td><td>高校校内专业性展馆 / 科普与国防教育基地
+                <a class="src-chip" href="https://edu.rednet.cn/content/2018/12/27/4480115.html" target="_blank" rel="noopener">红网 ↗</a></td></tr>
+              <tr><td>开放方式</td><td><b>全面对外免费开放</b>
+                <a class="src-chip" href="https://edu.rednet.cn/content/2018/12/27/4480115.html" target="_blank" rel="noopener">红网 ↗</a></td></tr>
+              <tr><td>馆址</td><td>长沙市<b>雨花区</b> · 长沙航空职业技术学院
+                <a class="src-chip" href="https://edu.rednet.cn/content/2018/12/27/4480115.html" target="_blank" rel="noopener">红网 ↗</a></td></tr>
+              <tr><td>总占地</td><td><b>26,600 余 ㎡</b>（馆方官网口径）
+                <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 ↗</a><br>
+                <b>2 万余 ㎡</b>（红网 2018 报道口径）
+                <a class="src-chip" href="https://edu.rednet.cn/content/2018/12/27/4480115.html" target="_blank" rel="noopener">红网 ↗</a><br>
+                <span style="color:var(--grey);font-size:12px">两口径并存，馆方现值为精确值</span> <span class="tag est">两源</span></td></tr>
+              <tr><td>构成</td><td><b>主馆 + 文物飞机陈列馆 + 航空装备展示坪</b>
+                <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 ↗</a></td></tr>
+              <tr><td>主馆规模</td><td>建筑面积 <b>7526 ㎡</b>，共 <b>三层</b>
+                <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 ↗</a></td></tr>
+              <tr><td>陈列实力</td><td>飞机陈列馆 <b>2 架</b>功勋战机（杜-2 轰炸机 · 乌米格-15 教练机）；
+                航空装备展示坪 <b>46 架</b>各型飞机及导弹、高炮、雷达
+                <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 ↗</a></td></tr>
+              <tr><td>定位</td><td>航空装备、航空科技与航空文化相融合的现代化专业性展馆
+                <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">馆方官网 ↗</a></td></tr>
               <tr><td>结构形式</td><td>—<span class="tag est">无公开依据</span></td></tr>
               <tr><td>设计单位</td><td>—<span class="tag est">无公开依据</span></td></tr>
             </tbody>
@@ -581,7 +626,7 @@ footer{position:relative;z-index:2;padding:clamp(40px,5vw,80px) clamp(24px,5vw,9
         <svg viewBox="0 0 1080 470" role="img" aria-label="航空馆三区构成与场地关系示意">
           <!-- 场地边界 -->
           <path class="s1" d="M40 60 L1040 34 L1056 420 L56 444 Z" stroke-dasharray="7 6" opacity=".5"/>
-          <text x="52" y="48">航空馆用地范围（示意） · 占地 2 万余 ㎡</text>
+          <text x="52" y="48">航空馆用地范围（示意） · 占地 26,600 余 ㎡（馆方官网）</text>
 
           <!-- 一区：主馆 -->
           <path class="sfill-hi" d="M120 170 L420 152 L448 336 L146 356 Z"/>
@@ -1348,20 +1393,27 @@ footer{position:relative;z-index:2;padding:clamp(40px,5vw,80px) clamp(24px,5vw,9
                 <td>红网 · 教育频道<br>（2018.12.27）</td>
                 <td>开馆时间与仪式、湖南首家航空馆、全面免费开放、
                     占地 2 万余 ㎡、三区构成、主馆 7526 ㎡ 三层、
-                    三大展区名称、互动展项清单、六项荣誉</td>
-              </tr>
-              <tr>
-                <td>湖南省教育厅<br>（2018.12.29）</td>
-                <td>湖南首家航空馆落地长沙航院、开馆与基地揭牌</td>
+                    三大展区名称、互动展项清单、六项荣誉
+                    <a class="src-chip" href="https://edu.rednet.cn/content/2018/12/27/4480115.html" target="_blank" rel="noopener">edu.rednet.cn ↗</a></td>
               </tr>
               <tr>
                 <td>湖南航空馆官网<br>hkg.cavtc.cn</td>
-                <td>图片来源（本页照片均取自馆方公开图片）<br>
-                    <span style="opacity:.6">注：分析期间该站返回字符集错误，正文内容未能读取</span></td>
+                <td><b>本页数据的第一手来源</b>——馆方概况页载明：占地 <b>26600 余 ㎡</b>、
+                    主馆建筑面积 <b>7526 ㎡</b>、三大展区、飞机陈列馆 2 架功勋战机、
+                    航空装备展示坪 46 架各型飞机、<b>2018 年 12 月 26 日</b>面向社会开放、
+                    十余项荣誉；本页照片亦取自该站公开图片
+                    <a class="src-chip" href="http://hkg.cavtc.cn/zggk.htm" target="_blank" rel="noopener">hkg.cavtc.cn/zggk ↗</a>
+                    <a class="src-chip" href="http://hkg.cavtc.cn/" target="_blank" rel="noopener">馆方首页 ↗</a></td>
+              </tr>
+              <tr>
+                <td>湖南省教育厅<br>（2018.12.29）</td>
+                <td>湖南首家航空馆落地长沙航院、开馆与基地揭牌
+                    <span class="src-chip" style="opacity:.45;cursor:default">未找到公开链接</span></td>
               </tr>
               <tr>
                 <td>中国教育在线<br>（2021.04.29）</td>
-                <td>航空馆作为学院对外名片、航模竞赛与低空经济相关活动</td>
+                <td>航空馆作为学院对外名片、航模竞赛与低空经济相关活动
+                    <span class="src-chip" style="opacity:.45;cursor:default">未找到公开链接</span></td>
               </tr>
             </tbody>
           </table>
