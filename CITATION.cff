@@ -15,7 +15,7 @@ authors:
     role: "AI assistant: source research, page implementation, debugging"
 version: "1.0.0"
 date-released: "2026-09-11"
-license: MIT
+license: Apache-2.0
 repository-code: "https://github.com/AssassinHLQ/museum-architecture-analysis"
 url: "https://assassinhlq.github.io/museum-architecture-analysis/"
 keywords:
