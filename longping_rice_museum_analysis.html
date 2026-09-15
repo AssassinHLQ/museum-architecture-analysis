@@ -40,6 +40,19 @@ body{
 img{max-width:100%;display:block}
 a{color:var(--sprout);text-decoration:none;border-bottom:1px solid var(--line)}
 a:hover{color:var(--grain);border-color:var(--grain)}
+/* ---------- 就近来源链接（数据可核验） ---------- */
+.src-chip{
+  display:inline-flex;align-items:baseline;gap:.34em;
+  font-family:var(--mono);font-size:.66rem;line-height:1.5;
+  letter-spacing:.03em;color:var(--grain);
+  border:1px solid rgba(232,195,104,.42);border-radius:3px;
+  padding:.06em .46em;margin-left:.34em;white-space:nowrap;
+  background:rgba(232,195,104,.06);
+  transition:border-color .28s,background .28s,color .28s;
+}
+.src-chip:hover{border-color:var(--grain);background:rgba(232,195,104,.14);color:#FFF3C4}
+.src-note{font-family:var(--mono);font-size:.7rem;color:var(--sprout);opacity:.8;border-bottom-color:transparent!important}
+.src-note:hover{opacity:1}
 
 /* ---------- 稻浪背景（canvas，轻量） ---------- */
 #waves{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5}
@@ -584,11 +597,14 @@ body:not(.js-ready) .anim{opacity:1;transform:none}
         </div>
         <div class="stats anim d2">
           <div class="stat"><div class="v"><span data-to="5">5</span><small>栋</small></div>
-            <div class="k">主体建筑数 <span class="tag">已核实</span></div></div>
+            <div class="k">主体建筑数 <span class="tag">已核实</span>
+              <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/bwgcx/202504/t20250416_11816421.html" target="_blank" rel="noopener" title="长沙市政府门户网站 · 隆平水稻博物馆">长沙市政府 ↗</a></div></div>
           <div class="stat"><div class="v"><span data-to="18000">18,000</span><small>㎡</small></div>
-            <div class="k">总建筑面积（官方） <span class="tag">已核实</span></div></div>
+            <div class="k">总建筑面积（官方） <span class="tag">已核实</span>
+              <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/bwgcx/202504/t20250416_11816421.html" target="_blank" rel="noopener" title="原文：总建筑面积1.8万平方米">长沙市政府 ↗</a></div></div>
           <div class="stat"><div class="v"><span data-to="3">3</span><small>星</small></div>
-            <div class="k">绿色建筑设计标识 <span class="tag">已核实</span></div></div>
+            <div class="k">绿色建筑设计标识 <span class="tag">已核实</span>
+              <a class="src-chip" href="https://www.cmie.cn/news2/138.html" target="_blank" rel="noopener" title="中机国际 · 绿色建筑公告（2018-04-26）">中机国际 ↗</a></div></div>
         </div>
       </div>
     </div>
@@ -602,7 +618,8 @@ body:not(.js-ready) .anim{opacity:1;transform:none}
       <h2 class="anim fl">项目档案 <span class="acc">与三处口径差异</span></h2>
       <p class="lead anim d1" style="max-width:80ch;margin-bottom:clamp(14px,2.2vw,26px)">
         先立档案。本案有<b>三处</b>公开资料互相不一致——面积、时间、体量数。
-        本页把各口径<a>并列列出并注明出处</a>，不擅自裁定。
+        本页把各口径<b>并列列出并注明出处</b>，不擅自裁定。
+        每一处引用均给出<b>可就地点击核验的原始链接</b>，见页末「资料来源」。
       </p>
       <div class="cols c12" style="align-items:start">
         <div class="anim fl">
@@ -619,16 +636,28 @@ body:not(.js-ready) .anim{opacity:1;transform:none}
               <tr><td>正式开馆</td><td><b>2019 年 9 月 27 日</b>（免费开放，袁隆平院士致辞） <span class="tag">已核实</span></td></tr>
               <tr><td>存量档案登记</td><td>2017 年 3 月（政府备案「成立时间」） <span class="tag src">另口径</span></td></tr>
               <tr><td>主体建筑</td><td><b>5 栋</b>——「5 颗金黄饱满的稻粒」／「五瓣盛开的芙蓉花」 <span class="tag">已核实</span></td></tr>
-              <tr><td>总建筑面积</td><td><b>18,000 ㎡</b>（长沙市政府门户网站 / 馆方）<br>
-                <b>1.1 万 ㎡</b>（星辰在线 2019 报道）<br>
-                <b>13,000 ㎡</b>（中机国际官网项目页）<br>
+              <tr><td>总建筑面积</td><td><b>18,000 ㎡</b>（长沙市政府门户网站 / 馆方）
+                <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/bwgcx/202504/t20250416_11816421.html" target="_blank" rel="noopener">changsha.gov.cn ↗</a><br>
+                <b>1.1 万 ㎡</b>（星辰在线 2019 报道）
+                <a class="src-chip" href="https://news.changsha.cn/xctt/html/110187/20191107/59813.html" target="_blank" rel="noopener">news.changsha.cn ↗</a><br>
+                <b>13,000 ㎡</b>（中机国际官网项目页）
+                <a class="src-chip" href="http://www.cmie.cn/img5/278.html" target="_blank" rel="noopener">cmie.cn ↗</a><br>
                 <span class="small">三口径并存，差异源于是否计入配套、地下与商业部分</span> <span class="tag src">三源</span></td></tr>
-              <tr><td>展陈面积</td><td>6,000 ㎡（各口径一致） <span class="tag">已核实</span></td></tr>
-              <tr><td>功能分区</td><td>陈列区 / 库藏区 / 公共服务区 / 技术与行政管理 等 5 区 <span class="tag">已核实</span></td></tr>
-              <tr><td>总投资</td><td>3.8 亿元（官方） <span class="tag">已核实</span></td></tr>
-              <tr><td>博物馆等级</td><td>国家二级博物馆 · 国家 4A 级旅游景区 <span class="tag">已核实</span></td></tr>
-              <tr><td>藏品</td><td>8,890 件（套），其中珍贵文物 225 件 <span class="tag">已核实</span></td></tr>
-              <tr><td>客流</td><td>自 2019 年开放累计 400 多万人次；2024 年突破 100 万人次 <span class="tag">已核实</span></td></tr>
+              <tr><td>面积构成</td><td>展陈 6,000 ㎡ · 公共空间 5,000 ㎡ · 教育空间 1,000 ㎡ · 商业配套 6,000 ㎡<br>
+                <span class="small">四项之和恰为 18,000 ㎡，与总数自洽</span>
+                <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/bwgcx/202504/t20250416_11816421.html" target="_blank" rel="noopener">changsha.gov.cn ↗</a> <span class="tag">已核实</span></td></tr>
+              <tr><td>展陈面积</td><td>6,000 ㎡（各口径一致）
+                <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/bwgcx/202504/t20250416_11816421.html" target="_blank" rel="noopener">changsha.gov.cn ↗</a> <span class="tag">已核实</span></td></tr>
+              <tr><td>功能分区</td><td>陈列区 / 库藏区 / 公共服务区 / 技术与行政管理 等 5 区
+                <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/bwgcx/202504/t20250416_11816421.html" target="_blank" rel="noopener">changsha.gov.cn ↗</a> <span class="tag">已核实</span></td></tr>
+              <tr><td>总投资</td><td>3.8 亿元（官方）
+                <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/bwgcx/202504/t20250416_11816421.html" target="_blank" rel="noopener">changsha.gov.cn ↗</a> <span class="tag">已核实</span></td></tr>
+              <tr><td>博物馆等级</td><td>国家二级博物馆 · 国家 4A 级旅游景区
+                <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/bwgcx/202504/t20250416_11816421.html" target="_blank" rel="noopener">changsha.gov.cn ↗</a> <span class="tag">已核实</span></td></tr>
+              <tr><td>藏品</td><td>8,890 件（套），其中珍贵文物 225 件
+                <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/bwgcx/202504/t20250416_11816421.html" target="_blank" rel="noopener">changsha.gov.cn ↗</a> <span class="tag">已核实</span></td></tr>
+              <tr><td>客流</td><td>自 2019 年开放累计 400 多万人次；2024 年突破 100 万人次
+                <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/bwgcx/202504/t20250416_11816421.html" target="_blank" rel="noopener">changsha.gov.cn ↗</a> <span class="tag">已核实</span></td></tr>
               <tr><td>结构形式 / 层数 / 高度</td><td><span class="tag none">无公开依据</span></td></tr>
             </tbody>
           </table>
@@ -1623,33 +1652,39 @@ body:not(.js-ready) .anim{opacity:1;transform:none}
         <div class="anim fl">
           <h4>官方来源</h4>
           <ul class="srclist" style="margin-bottom:18px">
-            <li><b>长沙市政府门户网站 · 隆平水稻博物馆</b>——总建筑面积 1.8 万 ㎡、
-              展陈 6,000 ㎡、公共 5,000 ㎡、教育 1,000 ㎡、商业配套 6,000 ㎡、
-              总投资 3.8 亿元、「俯瞰为 5 粒金黄的稻谷」「平视为散开的五瓣盛开的芙蓉花」、
-              5 个功能区、藏品 8,890 件（套）、国家二级博物馆、
-              「自 2019 年开放以来接待 400 多万人次」。
-              <a href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/bwgcx/202504/t20250416_11816421.html" target="_blank" rel="noopener">changsha.gov.cn</a></li>
-            <li><b>芙蓉区政府 · 隆平水稻博物馆 2019 年工作总结</b>——「9 月 27 日，隆平水稻博物馆
+            <li><b>长沙市政府门户网站 · 隆平水稻博物馆</b>（2025-03-25 发布）——<b>本页面积数据的政府口径来源</b>。
+              原文照录：「总建筑面积 1.8 万平方米，展陈面积 6000 平方米，公共空间面积 5000 平方米，
+              教育空间 1000 平方米，商业配套 6000 平方米。……总投资 3.8 亿元，
+              俯瞰为 5 粒金黄的稻谷，寓意华夏大地五谷丰登；平视为散开的五瓣盛开的芙蓉花。……
+              共有藏品 8890 件（套），其中珍贵文物 225 件。……自 2019 年开放以来，
+              接待国内外观众 400 多万人次，2024 年突破 100 万人次。」
+              <br><span class="small">另载：成立时间 2017 年 3 月、国家二级博物馆、国家 4A 级旅游景区、
+              地铁 6 号线设有隆平水稻博物馆站。</span>
+              <a class="src-chip" href="http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/bwgcx/202504/t20250416_11816421.html" target="_blank" rel="noopener">changsha.gov.cn ↗</a></li>
+            <li><b>长沙市文化旅游广电局 · 隆平水稻博物馆</b>——同一份博物馆名录的另一入口，
+              面积与投资口径与市政府门户网站一致（互为佐证）。
+              <a class="src-chip" href="http://wlgd.changsha.gov.cn/fwms/bwgcx/202503/t20250325_11790505.html" target="_blank" rel="noopener">wlgd.changsha.gov.cn ↗</a></li>
+            <li><b>芙蓉区政府 · 隆平水稻博物馆 2019 年工作总结</b>（2020-01-17）——「9 月 27 日，隆平水稻博物馆
               正式面向社会免费开放」、袁隆平院士致辞、三大主题陈列、
-              日均接待 2,000 人次。
-              <a href="http://furong.gov.cn/affairs/xxgk/gov2/lpsdbwg/plan/202002/t20200212_6754717.html" target="_blank" rel="noopener">furong.gov.cn</a></li>
+              全面开馆后日均接待 2,000 人次、截至 11 月底接待观众近 10 万人次。
+              <a class="src-chip" href="http://furong.gov.cn/affairs/xxgk/gov2/lpsdbwg/plan/202002/t20200212_6754717.html" target="_blank" rel="noopener">furong.gov.cn ↗</a></li>
           </ul>
           <h4>设计方与媒体来源</h4>
           <ul class="srclist">
             <li><b>中机国际工程设计研究院官网 · 项目页</b>——设计单位、与清华大学王路教授团队合作、
               建筑面积 13000 ㎡、「宛如金黄稻穗散落在一片田野之中」。
-              <a href="http://www.cmie.cn/img5/278.html" target="_blank" rel="noopener">cmie.cn/img5/278.html</a></li>
+              <a class="src-chip" href="http://www.cmie.cn/img5/278.html" target="_blank" rel="noopener">cmie.cn/img5/278.html ↗</a></li>
             <li><b>中机国际 · 绿色建筑公告（2018-04-26）</b>——绿色建筑三星级设计标识、
               罗劲工作室与第一建筑设计所共同设计、被动式节能、
               水源热泵水源侧取水与东岸公园绿化浇灌共用。
-              <a href="https://www.cmie.cn/news2/138.html" target="_blank" rel="noopener">cmie.cn/news2/138.html</a></li>
+              <a class="src-chip" href="https://www.cmie.cn/news2/138.html" target="_blank" rel="noopener">cmie.cn/news2/138.html ↗</a></li>
             <li><b>星辰在线（2019-11-07）</b>——「2015 年动工建设。2016 年 5 月，
               『袁隆平与杂交水稻』展厅率先完成布展并试运行。2019 年 9 月 27 日正式开馆」、
               总建筑面积 1.1 万 ㎡、5 栋主体建筑、五瓣芙蓉、46 个多媒体设备、
               种子墙、梯田由湖南水稻研究所种植。
-              <a href="https://news.changsha.cn/xctt/html/110187/20191107/59813.html" target="_blank" rel="noopener">news.changsha.cn</a></li>
+              <a class="src-chip" href="https://news.changsha.cn/xctt/html/110187/20191107/59813.html" target="_blank" rel="noopener">news.changsha.cn ↗</a></li>
             <li><b>长沙晚报（2016-07-13）</b>——总建筑师罗劲专访及其「建筑贴近大地」的设计观。
-              <a href="https://hn.rednet.cn/c/2016/07/13/1026827.htm" target="_blank" rel="noopener">红网转载</a></li>
+              <a class="src-chip" href="https://hn.rednet.cn/c/2016/07/13/1026827.htm" target="_blank" rel="noopener">红网转载 ↗</a></li>
           </ul>
           <p class="small" style="margin-top:16px">
             <b>本页图版</b>：全部 9 张 SVG 图版均为本页绘制的分析图解，
@@ -2532,6 +2567,30 @@ body:not(.js-ready) .anim{opacity:1;transform:none}
      正文只有两句时，拆句榨不出更多内容；
      改为在展开区补一条与该卡片结论直接相关的依据说明。
      ============================================================ */
+  /* 可核验来源表：卡片展开区的「依据」可就地点击核对原文 */
+  var SRC = {
+    gov:   'http://www.changsha.gov.cn/szf/ztzl/dzlyfw/mlcx/bwgcx/202504/t20250416_11816421.html',
+    wlgd:  'http://wlgd.changsha.gov.cn/fwms/bwgcx/202503/t20250325_11790505.html',
+    furong:'http://furong.gov.cn/affairs/xxgk/gov2/lpsdbwg/plan/202002/t20200212_6754717.html',
+    govName:'长沙市政府门户网站',
+    wlgdName:'长沙市文旅广电局',
+    furongName:'芙蓉区政府',
+    cmie:  'http://www.cmie.cn/img5/278.html',
+    cmieName:'中机国际官网',
+    green: 'https://www.cmie.cn/news2/138.html',
+    greenName:'中机国际绿建公告',
+    star:  'https://news.changsha.cn/xctt/html/110187/20191107/59813.html',
+    starName:'星辰在线 2019'
+  };
+
+  function srcLinks(keys) {
+    return keys.map(function (k) {
+      return '<a class="src-chip" href="' + SRC[k] + '" target="_blank" rel="noopener">'
+           + SRC[k + 'Name'] + ' ↗</a>';
+    }).join('');
+  }
+
+  /* 每条依据可含 source 数组 → 展开后就地给出原文链接 */
   var EVIDENCE = {
     '椭圆': '依据：稻粒轮廓由公开俯瞰照片反推，长宽比与两端收尖特征可直接量取。',
     '重心': '依据：最宽处偏下 1/5 由实景照片中拱顶与底座的关系反推，非设计方公布参数。',
@@ -2540,31 +2599,34 @@ body:not(.js-ready) .anim{opacity:1;transform:none}
     '防水': '依据：曲面屋面接缝位于不同坡向交接处，属构造常识推断，非本项目专有资料。',
     '正交墙': '依据：馆内实拍照片（见「展陈」屏）显示展墙全部为弧面。',
     '拱壳': '依据：拱为受压高效形式，起拱点落于展墙属常规做法推断。',
-    '分流': '依据：俯瞰照片可见中央圆形广场连通各体量，官方资料亦列出 5 个功能区。',
-    '46': '依据：星辰在线 2019 报道明确「该展厅设立了 46 个多媒体设备」。',
+    '分流': { text: '依据：俯瞰照片可见中央圆形广场连通各体量，官方资料亦列出 5 个功能区。', source: ['gov'] },
+    '46': { text: '依据：星辰在线 2019 报道明确「该展厅设立了 46 个多媒体设备」。', source: ['star'] },
     '弧墙': '依据：展陈实景照片显示图文沿弧线排布，标准化展柜需定制属推断。',
     '遮阳': '依据：长沙属夏热冬冷地区，竖向遮阳为常规西向遮阳做法；与该馆绿建三星目标一致。',
     '照明': '依据：白天立面实景为米灰色，夜景照片为金色，可判定金色由照明产生。',
     '拱脚': '依据：立面拱线与杆件高度的对应关系可从夜景与白天照片共同读出。',
-    '取水': '依据：中机国际绿色建筑公告原文「水源热泵水源侧取水与东岸公园绿化浇灌系统共用」。',
-    '被动式': '依据：中机国际公告提及采用被动式节能技术、优化空调系统设计。',
+    '取水': { text: '依据：中机国际绿色建筑公告原文「水源热泵水源侧取水与东岸公园绿化浇灌系统共用」。', source: ['green'] },
+    '被动式': { text: '依据：中机国际公告提及采用被动式节能技术、优化空调系统设计。', source: ['green'] },
     '体形': '依据：体形系数随外表面增大而升高，属建筑热工基本原理。',
-    '梯田': '依据：星辰在线报道「园区内开辟了水稻梯田，由湖南水稻研究所专业人员种植」。',
+    '梯田': { text: '依据：星辰在线报道「园区内开辟了水稻梯田，由湖南水稻研究所专业人员种植」。', source: ['star'] },
     '缓坡': '依据：俯瞰照片显示建筑坐于河岸缓坡，无明显台地开挖痕迹。',
-    '城市': '依据：长沙市政府门户网站载明地铁 6 号线设「隆平水稻博物馆」站。',
-    '尖端': '依据：官方表述「5 颗金黄饱满的稻粒」与俯瞰照片中拱顶朝向一致。',
+    '城市': { text: '依据：长沙市政府门户网站载明地铁 6 号线设「隆平水稻博物馆」站。', source: ['gov', 'wlgd'] },
+    '尖端': { text: '依据：官方表述「5 颗金黄饱满的稻粒」与俯瞰照片中拱顶朝向一致。', source: ['gov'] },
     '中心': '依据：俯瞰照片显示中央为圆形集散广场并置球体构筑物。',
-    '双关': '依据：官方同时给出「俯瞰 5 粒稻谷·五谷丰登」与「平视 5 瓣芙蓉·芙蓉国里尽朝晖」两种读法。'
+    '双关': { text: '依据：官方同时给出「俯瞰 5 粒稻谷·五谷丰登」与「平视 5 瓣芙蓉·芙蓉国里尽朝晖」两种读法。', source: ['gov'] }
   };
 
   function evidenceFor(card) {
     var h3 = card.querySelector('h3');
-    if (!h3) return '';
+    if (!h3) return null;
     var t = h3.textContent;
     for (var k in EVIDENCE) {
-      if (t.indexOf(k) >= 0) return EVIDENCE[k];
+      if (t.indexOf(k) >= 0) {
+        var e = EVIDENCE[k];
+        return (typeof e === 'string') ? { text: e } : e;
+      }
     }
-    return '';
+    return null;
   }
 
   function initCards() {
@@ -2580,8 +2642,9 @@ body:not(.js-ready) .anim{opacity:1;transform:none}
       box.className = 'card-more';
       var mp = document.createElement('p');
       var ev = evidenceFor(card);
-      if (ev) {
-        mp.textContent = ev;
+      if (ev && ev.text) {
+        // 依据文本 +（若有）可就地核验的来源链接
+        mp.innerHTML = ev.text + (ev.source && ev.source.length ? ' ' + srcLinks(ev.source) : '');
       } else {
         // 没有对应依据时，回退为把正文最后一句移入展开区
         var parts = lastP.textContent.match(/[^。；！？]+[。；！？]?/g) || [];
@@ -2597,6 +2660,11 @@ body:not(.js-ready) .anim{opacity:1;transform:none}
       hint.className = 'card-hint';
       hint.textContent = '展开';
       card.appendChild(hint);
+
+      // 点展开区里的来源链接时，不要连带把卡片收起
+      mp.addEventListener('click', function (e) {
+        if (e.target.closest('a')) e.stopPropagation();
+      });
 
       card.setAttribute('role', 'button');
       card.setAttribute('tabindex', '0');
